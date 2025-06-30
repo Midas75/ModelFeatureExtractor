@@ -1,0 +1,3751 @@
+- format: PyTorch v1.6 
+- identifer: yolo11s.pt 
+# Graph 1 
+## node 1 
+- [`builtins.dict`]:
+  - date: 2024-09-25T21:10:26.744899
+  - version: 8.2.100
+  - license: AGPL-3.0 License (https://ultralytics.com/license)
+  - docs: https://docs.ultralytics.com
+  - epoch: -1
+  - [`ultralytics.nn.tasks.DetectionModel`]:
+    - training: false
+    - model[`torch.nn.modules.container.Sequential`]:
+      - model.0[`ultralytics.nn.modules.conv.Conv`]:
+        - training: false
+        - model.0.conv[`torch.nn.modules.conv.Conv2d`]:
+          - weight:
+            - [`float16(32,3,3,3)`]
+          - training: false
+          - in_channels: 3
+          - out_channels: 32
+          - kernel_size: 3,3
+          - stride: 2,2
+          - padding: 1,1
+          - dilation: 1,1
+          - transposed: false
+          - output_padding: 0,0
+          - groups: 1
+          - padding_mode: zeros
+          - _reversed_padding_repeated_twice: 1,1,1,1
+        - model.0.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+          - weight:
+            - [`float16(32)`]
+          - bias:
+            - [`float16(32)`]
+          - running_mean:
+            - [`float16(32)`]
+          - running_var:
+            - [`float16(32)`]
+          - num_batches_tracked:
+            - [`int64`]
+          - training: false
+          - num_features: 32
+          - eps: 0.001
+          - momentum: 0.03
+          - affine: true
+          - track_running_stats: true
+        - model.0.act[`torch.nn.modules.activation.SiLU`]:
+          - training: false
+          - inplace: true
+        - i: 0
+        - f: -1
+        - type: ultralytics.nn.modules.conv.Conv
+      - model.1[`ultralytics.nn.modules.conv.Conv`]:
+        - training: false
+        - model.1.conv[`torch.nn.modules.conv.Conv2d`]:
+          - weight:
+            - [`float16(64,32,3,3)`]
+          - training: false
+          - in_channels: 32
+          - out_channels: 64
+          - kernel_size: 3,3
+          - stride: 2,2
+          - padding: 1,1
+          - dilation: 1,1
+          - transposed: false
+          - output_padding: 0,0
+          - groups: 1
+          - padding_mode: zeros
+          - _reversed_padding_repeated_twice: 1,1,1,1
+        - model.1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+          - weight:
+            - [`float16(64)`]
+          - bias:
+            - [`float16(64)`]
+          - running_mean:
+            - [`float16(64)`]
+          - running_var:
+            - [`float16(64)`]
+          - num_batches_tracked:
+            - [`int64`]
+          - training: false
+          - num_features: 64
+          - eps: 0.001
+          - momentum: 0.03
+          - affine: true
+          - track_running_stats: true
+        - model.1.act[`torch.nn.modules.activation.SiLU`]:
+          - training: false
+          - inplace: true
+        - i: 1
+        - f: -1
+        - type: ultralytics.nn.modules.conv.Conv
+      - model.2[`ultralytics.nn.modules.block.C3k2`]:
+        - training: false
+        - model.2.cv1[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.2.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(64,64,1,1)`]
+            - training: false
+            - in_channels: 64
+            - out_channels: 64
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.2.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(64)`]
+            - bias:
+              - [`float16(64)`]
+            - running_mean:
+              - [`float16(64)`]
+            - running_var:
+              - [`float16(64)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 64
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.2.cv1.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.2.cv2[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.2.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(128,96,1,1)`]
+            - training: false
+            - in_channels: 96
+            - out_channels: 128
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.2.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(128)`]
+            - bias:
+              - [`float16(128)`]
+            - running_mean:
+              - [`float16(128)`]
+            - running_var:
+              - [`float16(128)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 128
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.2.cv2.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.2.m[`torch.nn.modules.container.ModuleList`]:
+          - model.2.m.0[`ultralytics.nn.modules.block.Bottleneck`]:
+            - training: false
+            - model.2.m.0.cv1[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.2.m.0.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(16,32,3,3)`]
+                - training: false
+                - in_channels: 32
+                - out_channels: 16
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.2.m.0.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(16)`]
+                - bias:
+                  - [`float16(16)`]
+                - running_mean:
+                  - [`float16(16)`]
+                - running_var:
+                  - [`float16(16)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 16
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.2.m.0.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.2.m.0.cv2[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.2.m.0.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(32,16,3,3)`]
+                - training: false
+                - in_channels: 16
+                - out_channels: 32
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.2.m.0.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(32)`]
+                - bias:
+                  - [`float16(32)`]
+                - running_mean:
+                  - [`float16(32)`]
+                - running_var:
+                  - [`float16(32)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 32
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.2.m.0.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - add: true
+          - training: false
+        - c: 32
+        - i: 2
+        - f: -1
+        - type: ultralytics.nn.modules.block.C3k2
+      - model.3[`ultralytics.nn.modules.conv.Conv`]:
+        - training: false
+        - model.3.conv[`torch.nn.modules.conv.Conv2d`]:
+          - weight:
+            - [`float16(128,128,3,3)`]
+          - training: false
+          - in_channels: 128
+          - out_channels: 128
+          - kernel_size: 3,3
+          - stride: 2,2
+          - padding: 1,1
+          - dilation: 1,1
+          - transposed: false
+          - output_padding: 0,0
+          - groups: 1
+          - padding_mode: zeros
+          - _reversed_padding_repeated_twice: 1,1,1,1
+        - model.3.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+          - weight:
+            - [`float16(128)`]
+          - bias:
+            - [`float16(128)`]
+          - running_mean:
+            - [`float16(128)`]
+          - running_var:
+            - [`float16(128)`]
+          - num_batches_tracked:
+            - [`int64`]
+          - training: false
+          - num_features: 128
+          - eps: 0.001
+          - momentum: 0.03
+          - affine: true
+          - track_running_stats: true
+        - model.3.act[`torch.nn.modules.activation.SiLU`]:
+          - training: false
+          - inplace: true
+        - i: 3
+        - f: -1
+        - type: ultralytics.nn.modules.conv.Conv
+      - model.4[`ultralytics.nn.modules.block.C3k2`]:
+        - training: false
+        - model.4.cv1[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.4.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(128,128,1,1)`]
+            - training: false
+            - in_channels: 128
+            - out_channels: 128
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.4.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(128)`]
+            - bias:
+              - [`float16(128)`]
+            - running_mean:
+              - [`float16(128)`]
+            - running_var:
+              - [`float16(128)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 128
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.4.cv1.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.4.cv2[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.4.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(256,192,1,1)`]
+            - training: false
+            - in_channels: 192
+            - out_channels: 256
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.4.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(256)`]
+            - bias:
+              - [`float16(256)`]
+            - running_mean:
+              - [`float16(256)`]
+            - running_var:
+              - [`float16(256)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 256
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.4.cv2.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.4.m[`torch.nn.modules.container.ModuleList`]:
+          - model.4.m.0[`ultralytics.nn.modules.block.Bottleneck`]:
+            - training: false
+            - model.4.m.0.cv1[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.4.m.0.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(32,64,3,3)`]
+                - training: false
+                - in_channels: 64
+                - out_channels: 32
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.4.m.0.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(32)`]
+                - bias:
+                  - [`float16(32)`]
+                - running_mean:
+                  - [`float16(32)`]
+                - running_var:
+                  - [`float16(32)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 32
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.4.m.0.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.4.m.0.cv2[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.4.m.0.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(64,32,3,3)`]
+                - training: false
+                - in_channels: 32
+                - out_channels: 64
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.4.m.0.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(64)`]
+                - bias:
+                  - [`float16(64)`]
+                - running_mean:
+                  - [`float16(64)`]
+                - running_var:
+                  - [`float16(64)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 64
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.4.m.0.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - add: true
+          - training: false
+        - c: 64
+        - i: 4
+        - f: -1
+        - type: ultralytics.nn.modules.block.C3k2
+      - model.5[`ultralytics.nn.modules.conv.Conv`]:
+        - training: false
+        - model.5.conv[`torch.nn.modules.conv.Conv2d`]:
+          - weight:
+            - [`float16(256,256,3,3)`]
+          - training: false
+          - in_channels: 256
+          - out_channels: 256
+          - kernel_size: 3,3
+          - stride: 2,2
+          - padding: 1,1
+          - dilation: 1,1
+          - transposed: false
+          - output_padding: 0,0
+          - groups: 1
+          - padding_mode: zeros
+          - _reversed_padding_repeated_twice: 1,1,1,1
+        - model.5.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+          - weight:
+            - [`float16(256)`]
+          - bias:
+            - [`float16(256)`]
+          - running_mean:
+            - [`float16(256)`]
+          - running_var:
+            - [`float16(256)`]
+          - num_batches_tracked:
+            - [`int64`]
+          - training: false
+          - num_features: 256
+          - eps: 0.001
+          - momentum: 0.03
+          - affine: true
+          - track_running_stats: true
+        - model.5.act[`torch.nn.modules.activation.SiLU`]:
+          - training: false
+          - inplace: true
+        - i: 5
+        - f: -1
+        - type: ultralytics.nn.modules.conv.Conv
+      - model.6[`ultralytics.nn.modules.block.C3k2`]:
+        - training: false
+        - model.6.cv1[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.6.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(256,256,1,1)`]
+            - training: false
+            - in_channels: 256
+            - out_channels: 256
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.6.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(256)`]
+            - bias:
+              - [`float16(256)`]
+            - running_mean:
+              - [`float16(256)`]
+            - running_var:
+              - [`float16(256)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 256
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.6.cv1.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.6.cv2[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.6.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(256,384,1,1)`]
+            - training: false
+            - in_channels: 384
+            - out_channels: 256
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.6.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(256)`]
+            - bias:
+              - [`float16(256)`]
+            - running_mean:
+              - [`float16(256)`]
+            - running_var:
+              - [`float16(256)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 256
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.6.cv2.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.6.m[`torch.nn.modules.container.ModuleList`]:
+          - model.6.m.0[`ultralytics.nn.modules.block.C3k`]:
+            - training: false
+            - model.6.m.0.cv1[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.6.m.0.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(64,128,1,1)`]
+                - training: false
+                - in_channels: 128
+                - out_channels: 64
+                - kernel_size: 1,1
+                - stride: 1,1
+                - padding: 0,0
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 0,0,0,0
+              - model.6.m.0.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(64)`]
+                - bias:
+                  - [`float16(64)`]
+                - running_mean:
+                  - [`float16(64)`]
+                - running_var:
+                  - [`float16(64)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 64
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.6.m.0.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.6.m.0.cv2[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.6.m.0.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(64,128,1,1)`]
+                - training: false
+                - in_channels: 128
+                - out_channels: 64
+                - kernel_size: 1,1
+                - stride: 1,1
+                - padding: 0,0
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 0,0,0,0
+              - model.6.m.0.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(64)`]
+                - bias:
+                  - [`float16(64)`]
+                - running_mean:
+                  - [`float16(64)`]
+                - running_var:
+                  - [`float16(64)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 64
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.6.m.0.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.6.m.0.cv3[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.6.m.0.cv3.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(128,128,1,1)`]
+                - training: false
+                - in_channels: 128
+                - out_channels: 128
+                - kernel_size: 1,1
+                - stride: 1,1
+                - padding: 0,0
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 0,0,0,0
+              - model.6.m.0.cv3.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(128)`]
+                - bias:
+                  - [`float16(128)`]
+                - running_mean:
+                  - [`float16(128)`]
+                - running_var:
+                  - [`float16(128)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 128
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.6.m.0.cv3.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.6.m.0.m[`torch.nn.modules.container.Sequential`]:
+              - model.6.m.0.m.0[`ultralytics.nn.modules.block.Bottleneck`]:
+                - training: false
+                - model.6.m.0.m.0.cv1[`ultralytics.nn.modules.conv.Conv`]:
+                  - training: false
+                  - model.6.m.0.m.0.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                    - weight:
+                      - [`float16(64,64,3,3)`]
+                    - training: false
+                    - in_channels: 64
+                    - out_channels: 64
+                    - kernel_size: 3,3
+                    - stride: 1,1
+                    - padding: 1,1
+                    - dilation: 1,1
+                    - transposed: false
+                    - output_padding: 0,0
+                    - groups: 1
+                    - padding_mode: zeros
+                    - _reversed_padding_repeated_twice: 1,1,1,1
+                  - model.6.m.0.m.0.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                    - weight:
+                      - [`float16(64)`]
+                    - bias:
+                      - [`float16(64)`]
+                    - running_mean:
+                      - [`float16(64)`]
+                    - running_var:
+                      - [`float16(64)`]
+                    - num_batches_tracked:
+                      - [`int64`]
+                    - training: false
+                    - num_features: 64
+                    - eps: 0.001
+                    - momentum: 0.03
+                    - affine: true
+                    - track_running_stats: true
+                  - model.6.m.0.m.0.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                    - training: false
+                    - inplace: true
+                - model.6.m.0.m.0.cv2[`ultralytics.nn.modules.conv.Conv`]:
+                  - training: false
+                  - model.6.m.0.m.0.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                    - weight:
+                      - [`float16(64,64,3,3)`]
+                    - training: false
+                    - in_channels: 64
+                    - out_channels: 64
+                    - kernel_size: 3,3
+                    - stride: 1,1
+                    - padding: 1,1
+                    - dilation: 1,1
+                    - transposed: false
+                    - output_padding: 0,0
+                    - groups: 1
+                    - padding_mode: zeros
+                    - _reversed_padding_repeated_twice: 1,1,1,1
+                  - model.6.m.0.m.0.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                    - weight:
+                      - [`float16(64)`]
+                    - bias:
+                      - [`float16(64)`]
+                    - running_mean:
+                      - [`float16(64)`]
+                    - running_var:
+                      - [`float16(64)`]
+                    - num_batches_tracked:
+                      - [`int64`]
+                    - training: false
+                    - num_features: 64
+                    - eps: 0.001
+                    - momentum: 0.03
+                    - affine: true
+                    - track_running_stats: true
+                  - model.6.m.0.m.0.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                    - training: false
+                    - inplace: true
+                - add: true
+              - model.6.m.0.m.1[`ultralytics.nn.modules.block.Bottleneck`]:
+                - training: false
+                - model.6.m.0.m.1.cv1[`ultralytics.nn.modules.conv.Conv`]:
+                  - training: false
+                  - model.6.m.0.m.1.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                    - weight:
+                      - [`float16(64,64,3,3)`]
+                    - training: false
+                    - in_channels: 64
+                    - out_channels: 64
+                    - kernel_size: 3,3
+                    - stride: 1,1
+                    - padding: 1,1
+                    - dilation: 1,1
+                    - transposed: false
+                    - output_padding: 0,0
+                    - groups: 1
+                    - padding_mode: zeros
+                    - _reversed_padding_repeated_twice: 1,1,1,1
+                  - model.6.m.0.m.1.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                    - weight:
+                      - [`float16(64)`]
+                    - bias:
+                      - [`float16(64)`]
+                    - running_mean:
+                      - [`float16(64)`]
+                    - running_var:
+                      - [`float16(64)`]
+                    - num_batches_tracked:
+                      - [`int64`]
+                    - training: false
+                    - num_features: 64
+                    - eps: 0.001
+                    - momentum: 0.03
+                    - affine: true
+                    - track_running_stats: true
+                  - model.6.m.0.m.1.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                    - training: false
+                    - inplace: true
+                - model.6.m.0.m.1.cv2[`ultralytics.nn.modules.conv.Conv`]:
+                  - training: false
+                  - model.6.m.0.m.1.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                    - weight:
+                      - [`float16(64,64,3,3)`]
+                    - training: false
+                    - in_channels: 64
+                    - out_channels: 64
+                    - kernel_size: 3,3
+                    - stride: 1,1
+                    - padding: 1,1
+                    - dilation: 1,1
+                    - transposed: false
+                    - output_padding: 0,0
+                    - groups: 1
+                    - padding_mode: zeros
+                    - _reversed_padding_repeated_twice: 1,1,1,1
+                  - model.6.m.0.m.1.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                    - weight:
+                      - [`float16(64)`]
+                    - bias:
+                      - [`float16(64)`]
+                    - running_mean:
+                      - [`float16(64)`]
+                    - running_var:
+                      - [`float16(64)`]
+                    - num_batches_tracked:
+                      - [`int64`]
+                    - training: false
+                    - num_features: 64
+                    - eps: 0.001
+                    - momentum: 0.03
+                    - affine: true
+                    - track_running_stats: true
+                  - model.6.m.0.m.1.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                    - training: false
+                    - inplace: true
+                - add: true
+              - training: false
+          - training: false
+        - c: 128
+        - i: 6
+        - f: -1
+        - type: ultralytics.nn.modules.block.C3k2
+      - model.7[`ultralytics.nn.modules.conv.Conv`]:
+        - training: false
+        - model.7.conv[`torch.nn.modules.conv.Conv2d`]:
+          - weight:
+            - [`float16(512,256,3,3)`]
+          - training: false
+          - in_channels: 256
+          - out_channels: 512
+          - kernel_size: 3,3
+          - stride: 2,2
+          - padding: 1,1
+          - dilation: 1,1
+          - transposed: false
+          - output_padding: 0,0
+          - groups: 1
+          - padding_mode: zeros
+          - _reversed_padding_repeated_twice: 1,1,1,1
+        - model.7.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+          - weight:
+            - [`float16(512)`]
+          - bias:
+            - [`float16(512)`]
+          - running_mean:
+            - [`float16(512)`]
+          - running_var:
+            - [`float16(512)`]
+          - num_batches_tracked:
+            - [`int64`]
+          - training: false
+          - num_features: 512
+          - eps: 0.001
+          - momentum: 0.03
+          - affine: true
+          - track_running_stats: true
+        - model.7.act[`torch.nn.modules.activation.SiLU`]:
+          - training: false
+          - inplace: true
+        - i: 7
+        - f: -1
+        - type: ultralytics.nn.modules.conv.Conv
+      - model.8[`ultralytics.nn.modules.block.C3k2`]:
+        - training: false
+        - model.8.cv1[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.8.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(512,512,1,1)`]
+            - training: false
+            - in_channels: 512
+            - out_channels: 512
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.8.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(512)`]
+            - bias:
+              - [`float16(512)`]
+            - running_mean:
+              - [`float16(512)`]
+            - running_var:
+              - [`float16(512)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 512
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.8.cv1.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.8.cv2[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.8.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(512,768,1,1)`]
+            - training: false
+            - in_channels: 768
+            - out_channels: 512
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.8.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(512)`]
+            - bias:
+              - [`float16(512)`]
+            - running_mean:
+              - [`float16(512)`]
+            - running_var:
+              - [`float16(512)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 512
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.8.cv2.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.8.m[`torch.nn.modules.container.ModuleList`]:
+          - model.8.m.0[`ultralytics.nn.modules.block.C3k`]:
+            - training: false
+            - model.8.m.0.cv1[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.8.m.0.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(128,256,1,1)`]
+                - training: false
+                - in_channels: 256
+                - out_channels: 128
+                - kernel_size: 1,1
+                - stride: 1,1
+                - padding: 0,0
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 0,0,0,0
+              - model.8.m.0.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(128)`]
+                - bias:
+                  - [`float16(128)`]
+                - running_mean:
+                  - [`float16(128)`]
+                - running_var:
+                  - [`float16(128)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 128
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.8.m.0.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.8.m.0.cv2[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.8.m.0.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(128,256,1,1)`]
+                - training: false
+                - in_channels: 256
+                - out_channels: 128
+                - kernel_size: 1,1
+                - stride: 1,1
+                - padding: 0,0
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 0,0,0,0
+              - model.8.m.0.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(128)`]
+                - bias:
+                  - [`float16(128)`]
+                - running_mean:
+                  - [`float16(128)`]
+                - running_var:
+                  - [`float16(128)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 128
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.8.m.0.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.8.m.0.cv3[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.8.m.0.cv3.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(256,256,1,1)`]
+                - training: false
+                - in_channels: 256
+                - out_channels: 256
+                - kernel_size: 1,1
+                - stride: 1,1
+                - padding: 0,0
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 0,0,0,0
+              - model.8.m.0.cv3.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(256)`]
+                - bias:
+                  - [`float16(256)`]
+                - running_mean:
+                  - [`float16(256)`]
+                - running_var:
+                  - [`float16(256)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 256
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.8.m.0.cv3.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.8.m.0.m[`torch.nn.modules.container.Sequential`]:
+              - model.8.m.0.m.0[`ultralytics.nn.modules.block.Bottleneck`]:
+                - training: false
+                - model.8.m.0.m.0.cv1[`ultralytics.nn.modules.conv.Conv`]:
+                  - training: false
+                  - model.8.m.0.m.0.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                    - weight:
+                      - [`float16(128,128,3,3)`]
+                    - training: false
+                    - in_channels: 128
+                    - out_channels: 128
+                    - kernel_size: 3,3
+                    - stride: 1,1
+                    - padding: 1,1
+                    - dilation: 1,1
+                    - transposed: false
+                    - output_padding: 0,0
+                    - groups: 1
+                    - padding_mode: zeros
+                    - _reversed_padding_repeated_twice: 1,1,1,1
+                  - model.8.m.0.m.0.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                    - weight:
+                      - [`float16(128)`]
+                    - bias:
+                      - [`float16(128)`]
+                    - running_mean:
+                      - [`float16(128)`]
+                    - running_var:
+                      - [`float16(128)`]
+                    - num_batches_tracked:
+                      - [`int64`]
+                    - training: false
+                    - num_features: 128
+                    - eps: 0.001
+                    - momentum: 0.03
+                    - affine: true
+                    - track_running_stats: true
+                  - model.8.m.0.m.0.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                    - training: false
+                    - inplace: true
+                - model.8.m.0.m.0.cv2[`ultralytics.nn.modules.conv.Conv`]:
+                  - training: false
+                  - model.8.m.0.m.0.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                    - weight:
+                      - [`float16(128,128,3,3)`]
+                    - training: false
+                    - in_channels: 128
+                    - out_channels: 128
+                    - kernel_size: 3,3
+                    - stride: 1,1
+                    - padding: 1,1
+                    - dilation: 1,1
+                    - transposed: false
+                    - output_padding: 0,0
+                    - groups: 1
+                    - padding_mode: zeros
+                    - _reversed_padding_repeated_twice: 1,1,1,1
+                  - model.8.m.0.m.0.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                    - weight:
+                      - [`float16(128)`]
+                    - bias:
+                      - [`float16(128)`]
+                    - running_mean:
+                      - [`float16(128)`]
+                    - running_var:
+                      - [`float16(128)`]
+                    - num_batches_tracked:
+                      - [`int64`]
+                    - training: false
+                    - num_features: 128
+                    - eps: 0.001
+                    - momentum: 0.03
+                    - affine: true
+                    - track_running_stats: true
+                  - model.8.m.0.m.0.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                    - training: false
+                    - inplace: true
+                - add: true
+              - model.8.m.0.m.1[`ultralytics.nn.modules.block.Bottleneck`]:
+                - training: false
+                - model.8.m.0.m.1.cv1[`ultralytics.nn.modules.conv.Conv`]:
+                  - training: false
+                  - model.8.m.0.m.1.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                    - weight:
+                      - [`float16(128,128,3,3)`]
+                    - training: false
+                    - in_channels: 128
+                    - out_channels: 128
+                    - kernel_size: 3,3
+                    - stride: 1,1
+                    - padding: 1,1
+                    - dilation: 1,1
+                    - transposed: false
+                    - output_padding: 0,0
+                    - groups: 1
+                    - padding_mode: zeros
+                    - _reversed_padding_repeated_twice: 1,1,1,1
+                  - model.8.m.0.m.1.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                    - weight:
+                      - [`float16(128)`]
+                    - bias:
+                      - [`float16(128)`]
+                    - running_mean:
+                      - [`float16(128)`]
+                    - running_var:
+                      - [`float16(128)`]
+                    - num_batches_tracked:
+                      - [`int64`]
+                    - training: false
+                    - num_features: 128
+                    - eps: 0.001
+                    - momentum: 0.03
+                    - affine: true
+                    - track_running_stats: true
+                  - model.8.m.0.m.1.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                    - training: false
+                    - inplace: true
+                - model.8.m.0.m.1.cv2[`ultralytics.nn.modules.conv.Conv`]:
+                  - training: false
+                  - model.8.m.0.m.1.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                    - weight:
+                      - [`float16(128,128,3,3)`]
+                    - training: false
+                    - in_channels: 128
+                    - out_channels: 128
+                    - kernel_size: 3,3
+                    - stride: 1,1
+                    - padding: 1,1
+                    - dilation: 1,1
+                    - transposed: false
+                    - output_padding: 0,0
+                    - groups: 1
+                    - padding_mode: zeros
+                    - _reversed_padding_repeated_twice: 1,1,1,1
+                  - model.8.m.0.m.1.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                    - weight:
+                      - [`float16(128)`]
+                    - bias:
+                      - [`float16(128)`]
+                    - running_mean:
+                      - [`float16(128)`]
+                    - running_var:
+                      - [`float16(128)`]
+                    - num_batches_tracked:
+                      - [`int64`]
+                    - training: false
+                    - num_features: 128
+                    - eps: 0.001
+                    - momentum: 0.03
+                    - affine: true
+                    - track_running_stats: true
+                  - model.8.m.0.m.1.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                    - training: false
+                    - inplace: true
+                - add: true
+              - training: false
+          - training: false
+        - c: 256
+        - i: 8
+        - f: -1
+        - type: ultralytics.nn.modules.block.C3k2
+      - model.9[`ultralytics.nn.modules.block.SPPF`]:
+        - training: false
+        - model.9.cv1[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.9.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(256,512,1,1)`]
+            - training: false
+            - in_channels: 512
+            - out_channels: 256
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.9.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(256)`]
+            - bias:
+              - [`float16(256)`]
+            - running_mean:
+              - [`float16(256)`]
+            - running_var:
+              - [`float16(256)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 256
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.9.cv1.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.9.cv2[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.9.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(512,1024,1,1)`]
+            - training: false
+            - in_channels: 1024
+            - out_channels: 512
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.9.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(512)`]
+            - bias:
+              - [`float16(512)`]
+            - running_mean:
+              - [`float16(512)`]
+            - running_var:
+              - [`float16(512)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 512
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.9.cv2.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.9.m[`torch.nn.modules.pooling.MaxPool2d`]:
+          - training: false
+          - kernel_size: 5
+          - stride: 1
+          - padding: 2
+          - dilation: 1
+          - return_indices: false
+          - ceil_mode: false
+        - i: 9
+        - f: -1
+        - type: ultralytics.nn.modules.block.SPPF
+      - model.10[`ultralytics.nn.modules.block.C2PSA`]:
+        - training: false
+        - model.10.cv1[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.10.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(512,512,1,1)`]
+            - training: false
+            - in_channels: 512
+            - out_channels: 512
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.10.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(512)`]
+            - bias:
+              - [`float16(512)`]
+            - running_mean:
+              - [`float16(512)`]
+            - running_var:
+              - [`float16(512)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 512
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.10.cv1.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.10.cv2[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.10.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(512,512,1,1)`]
+            - training: false
+            - in_channels: 512
+            - out_channels: 512
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.10.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(512)`]
+            - bias:
+              - [`float16(512)`]
+            - running_mean:
+              - [`float16(512)`]
+            - running_var:
+              - [`float16(512)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 512
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.10.cv2.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.10.m[`torch.nn.modules.container.Sequential`]:
+          - model.10.m.0[`ultralytics.nn.modules.block.PSABlock`]:
+            - training: false
+            - model.10.m.0.attn[`ultralytics.nn.modules.block.Attention`]:
+              - training: false
+              - model.10.m.0.attn.qkv[`ultralytics.nn.modules.conv.Conv`]:
+                - training: false
+                - model.10.m.0.attn.qkv.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(512,256,1,1)`]
+                  - training: false
+                  - in_channels: 256
+                  - out_channels: 512
+                  - kernel_size: 1,1
+                  - stride: 1,1
+                  - padding: 0,0
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 1
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 0,0,0,0
+                - model.10.m.0.attn.qkv.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(512)`]
+                  - bias:
+                    - [`float16(512)`]
+                  - running_mean:
+                    - [`float16(512)`]
+                  - running_var:
+                    - [`float16(512)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 512
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.10.m.0.attn.qkv.act[`torch.nn.modules.linear.Identity`]:
+                  - training: false
+              - model.10.m.0.attn.proj[`ultralytics.nn.modules.conv.Conv`]:
+                - training: false
+                - model.10.m.0.attn.proj.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(256,256,1,1)`]
+                  - training: false
+                  - in_channels: 256
+                  - out_channels: 256
+                  - kernel_size: 1,1
+                  - stride: 1,1
+                  - padding: 0,0
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 1
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 0,0,0,0
+                - model.10.m.0.attn.proj.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(256)`]
+                  - bias:
+                    - [`float16(256)`]
+                  - running_mean:
+                    - [`float16(256)`]
+                  - running_var:
+                    - [`float16(256)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 256
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.10.m.0.attn.proj.act[`torch.nn.modules.linear.Identity`]:
+                  - training: false
+              - model.10.m.0.attn.pe[`ultralytics.nn.modules.conv.Conv`]:
+                - training: false
+                - model.10.m.0.attn.pe.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(256,1,3,3)`]
+                  - training: false
+                  - in_channels: 256
+                  - out_channels: 256
+                  - kernel_size: 3,3
+                  - stride: 1,1
+                  - padding: 1,1
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 256
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 1,1,1,1
+                - model.10.m.0.attn.pe.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(256)`]
+                  - bias:
+                    - [`float16(256)`]
+                  - running_mean:
+                    - [`float16(256)`]
+                  - running_var:
+                    - [`float16(256)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 256
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.10.m.0.attn.pe.act[`torch.nn.modules.linear.Identity`]:
+                  - training: false
+              - num_heads: 4
+              - head_dim: 64
+              - key_dim: 32
+              - scale: 0.1767766952966369
+            - model.10.m.0.ffn[`torch.nn.modules.container.Sequential`]:
+              - model.10.m.0.ffn.0[`ultralytics.nn.modules.conv.Conv`]:
+                - training: false
+                - model.10.m.0.ffn.0.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(512,256,1,1)`]
+                  - training: false
+                  - in_channels: 256
+                  - out_channels: 512
+                  - kernel_size: 1,1
+                  - stride: 1,1
+                  - padding: 0,0
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 1
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 0,0,0,0
+                - model.10.m.0.ffn.0.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(512)`]
+                  - bias:
+                    - [`float16(512)`]
+                  - running_mean:
+                    - [`float16(512)`]
+                  - running_var:
+                    - [`float16(512)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 512
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.10.m.0.ffn.0.act[`torch.nn.modules.activation.SiLU`]:
+                  - training: false
+                  - inplace: true
+              - model.10.m.0.ffn.1[`ultralytics.nn.modules.conv.Conv`]:
+                - training: false
+                - model.10.m.0.ffn.1.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(256,512,1,1)`]
+                  - training: false
+                  - in_channels: 512
+                  - out_channels: 256
+                  - kernel_size: 1,1
+                  - stride: 1,1
+                  - padding: 0,0
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 1
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 0,0,0,0
+                - model.10.m.0.ffn.1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(256)`]
+                  - bias:
+                    - [`float16(256)`]
+                  - running_mean:
+                    - [`float16(256)`]
+                  - running_var:
+                    - [`float16(256)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 256
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.10.m.0.ffn.1.act[`torch.nn.modules.linear.Identity`]:
+                  - training: false
+              - training: false
+            - add: true
+          - training: false
+        - c: 256
+        - i: 10
+        - f: -1
+        - type: ultralytics.nn.modules.block.C2PSA
+      - model.11[`torch.nn.modules.upsampling.Upsample`]:
+        - training: false
+        - name: Upsample
+        - scale_factor: 2
+        - mode: nearest
+        - i: 11
+        - f: -1
+        - type: torch.nn.modules.upsampling.Upsample
+      - model.12[`ultralytics.nn.modules.conv.Concat`]:
+        - training: false
+        - d: 1
+        - i: 12
+        - f: -1,6
+        - type: ultralytics.nn.modules.conv.Concat
+      - model.13[`ultralytics.nn.modules.block.C3k2`]:
+        - training: false
+        - model.13.cv1[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.13.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(256,768,1,1)`]
+            - training: false
+            - in_channels: 768
+            - out_channels: 256
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.13.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(256)`]
+            - bias:
+              - [`float16(256)`]
+            - running_mean:
+              - [`float16(256)`]
+            - running_var:
+              - [`float16(256)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 256
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.13.cv1.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.13.cv2[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.13.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(256,384,1,1)`]
+            - training: false
+            - in_channels: 384
+            - out_channels: 256
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.13.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(256)`]
+            - bias:
+              - [`float16(256)`]
+            - running_mean:
+              - [`float16(256)`]
+            - running_var:
+              - [`float16(256)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 256
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.13.cv2.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.13.m[`torch.nn.modules.container.ModuleList`]:
+          - model.13.m.0[`ultralytics.nn.modules.block.Bottleneck`]:
+            - training: false
+            - model.13.m.0.cv1[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.13.m.0.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(64,128,3,3)`]
+                - training: false
+                - in_channels: 128
+                - out_channels: 64
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.13.m.0.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(64)`]
+                - bias:
+                  - [`float16(64)`]
+                - running_mean:
+                  - [`float16(64)`]
+                - running_var:
+                  - [`float16(64)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 64
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.13.m.0.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.13.m.0.cv2[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.13.m.0.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(128,64,3,3)`]
+                - training: false
+                - in_channels: 64
+                - out_channels: 128
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.13.m.0.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(128)`]
+                - bias:
+                  - [`float16(128)`]
+                - running_mean:
+                  - [`float16(128)`]
+                - running_var:
+                  - [`float16(128)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 128
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.13.m.0.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - add: true
+          - training: false
+        - c: 128
+        - i: 13
+        - f: -1
+        - type: ultralytics.nn.modules.block.C3k2
+      - model.14[`torch.nn.modules.upsampling.Upsample`]:
+        - training: false
+        - name: Upsample
+        - scale_factor: 2
+        - mode: nearest
+        - i: 14
+        - f: -1
+        - type: torch.nn.modules.upsampling.Upsample
+      - model.15[`ultralytics.nn.modules.conv.Concat`]:
+        - training: false
+        - d: 1
+        - i: 15
+        - f: -1,4
+        - type: ultralytics.nn.modules.conv.Concat
+      - model.16[`ultralytics.nn.modules.block.C3k2`]:
+        - training: false
+        - model.16.cv1[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.16.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(128,512,1,1)`]
+            - training: false
+            - in_channels: 512
+            - out_channels: 128
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.16.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(128)`]
+            - bias:
+              - [`float16(128)`]
+            - running_mean:
+              - [`float16(128)`]
+            - running_var:
+              - [`float16(128)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 128
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.16.cv1.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.16.cv2[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.16.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(128,192,1,1)`]
+            - training: false
+            - in_channels: 192
+            - out_channels: 128
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.16.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(128)`]
+            - bias:
+              - [`float16(128)`]
+            - running_mean:
+              - [`float16(128)`]
+            - running_var:
+              - [`float16(128)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 128
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.16.cv2.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.16.m[`torch.nn.modules.container.ModuleList`]:
+          - model.16.m.0[`ultralytics.nn.modules.block.Bottleneck`]:
+            - training: false
+            - model.16.m.0.cv1[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.16.m.0.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(32,64,3,3)`]
+                - training: false
+                - in_channels: 64
+                - out_channels: 32
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.16.m.0.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(32)`]
+                - bias:
+                  - [`float16(32)`]
+                - running_mean:
+                  - [`float16(32)`]
+                - running_var:
+                  - [`float16(32)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 32
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.16.m.0.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.16.m.0.cv2[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.16.m.0.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(64,32,3,3)`]
+                - training: false
+                - in_channels: 32
+                - out_channels: 64
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.16.m.0.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(64)`]
+                - bias:
+                  - [`float16(64)`]
+                - running_mean:
+                  - [`float16(64)`]
+                - running_var:
+                  - [`float16(64)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 64
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.16.m.0.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - add: true
+          - training: false
+        - c: 64
+        - i: 16
+        - f: -1
+        - type: ultralytics.nn.modules.block.C3k2
+      - model.17[`ultralytics.nn.modules.conv.Conv`]:
+        - training: false
+        - model.17.conv[`torch.nn.modules.conv.Conv2d`]:
+          - weight:
+            - [`float16(128,128,3,3)`]
+          - training: false
+          - in_channels: 128
+          - out_channels: 128
+          - kernel_size: 3,3
+          - stride: 2,2
+          - padding: 1,1
+          - dilation: 1,1
+          - transposed: false
+          - output_padding: 0,0
+          - groups: 1
+          - padding_mode: zeros
+          - _reversed_padding_repeated_twice: 1,1,1,1
+        - model.17.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+          - weight:
+            - [`float16(128)`]
+          - bias:
+            - [`float16(128)`]
+          - running_mean:
+            - [`float16(128)`]
+          - running_var:
+            - [`float16(128)`]
+          - num_batches_tracked:
+            - [`int64`]
+          - training: false
+          - num_features: 128
+          - eps: 0.001
+          - momentum: 0.03
+          - affine: true
+          - track_running_stats: true
+        - model.17.act[`torch.nn.modules.activation.SiLU`]:
+          - training: false
+          - inplace: true
+        - i: 17
+        - f: -1
+        - type: ultralytics.nn.modules.conv.Conv
+      - model.18[`ultralytics.nn.modules.conv.Concat`]:
+        - training: false
+        - d: 1
+        - i: 18
+        - f: -1,13
+        - type: ultralytics.nn.modules.conv.Concat
+      - model.19[`ultralytics.nn.modules.block.C3k2`]:
+        - training: false
+        - model.19.cv1[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.19.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(256,384,1,1)`]
+            - training: false
+            - in_channels: 384
+            - out_channels: 256
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.19.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(256)`]
+            - bias:
+              - [`float16(256)`]
+            - running_mean:
+              - [`float16(256)`]
+            - running_var:
+              - [`float16(256)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 256
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.19.cv1.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.19.cv2[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.19.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(256,384,1,1)`]
+            - training: false
+            - in_channels: 384
+            - out_channels: 256
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.19.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(256)`]
+            - bias:
+              - [`float16(256)`]
+            - running_mean:
+              - [`float16(256)`]
+            - running_var:
+              - [`float16(256)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 256
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.19.cv2.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.19.m[`torch.nn.modules.container.ModuleList`]:
+          - model.19.m.0[`ultralytics.nn.modules.block.Bottleneck`]:
+            - training: false
+            - model.19.m.0.cv1[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.19.m.0.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(64,128,3,3)`]
+                - training: false
+                - in_channels: 128
+                - out_channels: 64
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.19.m.0.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(64)`]
+                - bias:
+                  - [`float16(64)`]
+                - running_mean:
+                  - [`float16(64)`]
+                - running_var:
+                  - [`float16(64)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 64
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.19.m.0.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.19.m.0.cv2[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.19.m.0.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(128,64,3,3)`]
+                - training: false
+                - in_channels: 64
+                - out_channels: 128
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.19.m.0.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(128)`]
+                - bias:
+                  - [`float16(128)`]
+                - running_mean:
+                  - [`float16(128)`]
+                - running_var:
+                  - [`float16(128)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 128
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.19.m.0.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - add: true
+          - training: false
+        - c: 128
+        - i: 19
+        - f: -1
+        - type: ultralytics.nn.modules.block.C3k2
+      - model.20[`ultralytics.nn.modules.conv.Conv`]:
+        - training: false
+        - model.20.conv[`torch.nn.modules.conv.Conv2d`]:
+          - weight:
+            - [`float16(256,256,3,3)`]
+          - training: false
+          - in_channels: 256
+          - out_channels: 256
+          - kernel_size: 3,3
+          - stride: 2,2
+          - padding: 1,1
+          - dilation: 1,1
+          - transposed: false
+          - output_padding: 0,0
+          - groups: 1
+          - padding_mode: zeros
+          - _reversed_padding_repeated_twice: 1,1,1,1
+        - model.20.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+          - weight:
+            - [`float16(256)`]
+          - bias:
+            - [`float16(256)`]
+          - running_mean:
+            - [`float16(256)`]
+          - running_var:
+            - [`float16(256)`]
+          - num_batches_tracked:
+            - [`int64`]
+          - training: false
+          - num_features: 256
+          - eps: 0.001
+          - momentum: 0.03
+          - affine: true
+          - track_running_stats: true
+        - model.20.act[`torch.nn.modules.activation.SiLU`]:
+          - training: false
+          - inplace: true
+        - i: 20
+        - f: -1
+        - type: ultralytics.nn.modules.conv.Conv
+      - model.21[`ultralytics.nn.modules.conv.Concat`]:
+        - training: false
+        - d: 1
+        - i: 21
+        - f: -1,10
+        - type: ultralytics.nn.modules.conv.Concat
+      - model.22[`ultralytics.nn.modules.block.C3k2`]:
+        - training: false
+        - model.22.cv1[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.22.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(512,768,1,1)`]
+            - training: false
+            - in_channels: 768
+            - out_channels: 512
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.22.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(512)`]
+            - bias:
+              - [`float16(512)`]
+            - running_mean:
+              - [`float16(512)`]
+            - running_var:
+              - [`float16(512)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 512
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.22.cv1.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.22.cv2[`ultralytics.nn.modules.conv.Conv`]:
+          - training: false
+          - model.22.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(512,768,1,1)`]
+            - training: false
+            - in_channels: 768
+            - out_channels: 512
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - model.22.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+            - weight:
+              - [`float16(512)`]
+            - bias:
+              - [`float16(512)`]
+            - running_mean:
+              - [`float16(512)`]
+            - running_var:
+              - [`float16(512)`]
+            - num_batches_tracked:
+              - [`int64`]
+            - training: false
+            - num_features: 512
+            - eps: 0.001
+            - momentum: 0.03
+            - affine: true
+            - track_running_stats: true
+          - model.22.cv2.act[`torch.nn.modules.activation.SiLU`]:
+            - training: false
+            - inplace: true
+        - model.22.m[`torch.nn.modules.container.ModuleList`]:
+          - model.22.m.0[`ultralytics.nn.modules.block.C3k`]:
+            - training: false
+            - model.22.m.0.cv1[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.22.m.0.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(128,256,1,1)`]
+                - training: false
+                - in_channels: 256
+                - out_channels: 128
+                - kernel_size: 1,1
+                - stride: 1,1
+                - padding: 0,0
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 0,0,0,0
+              - model.22.m.0.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(128)`]
+                - bias:
+                  - [`float16(128)`]
+                - running_mean:
+                  - [`float16(128)`]
+                - running_var:
+                  - [`float16(128)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 128
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.22.m.0.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.22.m.0.cv2[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.22.m.0.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(128,256,1,1)`]
+                - training: false
+                - in_channels: 256
+                - out_channels: 128
+                - kernel_size: 1,1
+                - stride: 1,1
+                - padding: 0,0
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 0,0,0,0
+              - model.22.m.0.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(128)`]
+                - bias:
+                  - [`float16(128)`]
+                - running_mean:
+                  - [`float16(128)`]
+                - running_var:
+                  - [`float16(128)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 128
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.22.m.0.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.22.m.0.cv3[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.22.m.0.cv3.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(256,256,1,1)`]
+                - training: false
+                - in_channels: 256
+                - out_channels: 256
+                - kernel_size: 1,1
+                - stride: 1,1
+                - padding: 0,0
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 0,0,0,0
+              - model.22.m.0.cv3.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(256)`]
+                - bias:
+                  - [`float16(256)`]
+                - running_mean:
+                  - [`float16(256)`]
+                - running_var:
+                  - [`float16(256)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 256
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.22.m.0.cv3.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.22.m.0.m[`torch.nn.modules.container.Sequential`]:
+              - model.22.m.0.m.0[`ultralytics.nn.modules.block.Bottleneck`]:
+                - training: false
+                - model.22.m.0.m.0.cv1[`ultralytics.nn.modules.conv.Conv`]:
+                  - training: false
+                  - model.22.m.0.m.0.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                    - weight:
+                      - [`float16(128,128,3,3)`]
+                    - training: false
+                    - in_channels: 128
+                    - out_channels: 128
+                    - kernel_size: 3,3
+                    - stride: 1,1
+                    - padding: 1,1
+                    - dilation: 1,1
+                    - transposed: false
+                    - output_padding: 0,0
+                    - groups: 1
+                    - padding_mode: zeros
+                    - _reversed_padding_repeated_twice: 1,1,1,1
+                  - model.22.m.0.m.0.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                    - weight:
+                      - [`float16(128)`]
+                    - bias:
+                      - [`float16(128)`]
+                    - running_mean:
+                      - [`float16(128)`]
+                    - running_var:
+                      - [`float16(128)`]
+                    - num_batches_tracked:
+                      - [`int64`]
+                    - training: false
+                    - num_features: 128
+                    - eps: 0.001
+                    - momentum: 0.03
+                    - affine: true
+                    - track_running_stats: true
+                  - model.22.m.0.m.0.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                    - training: false
+                    - inplace: true
+                - model.22.m.0.m.0.cv2[`ultralytics.nn.modules.conv.Conv`]:
+                  - training: false
+                  - model.22.m.0.m.0.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                    - weight:
+                      - [`float16(128,128,3,3)`]
+                    - training: false
+                    - in_channels: 128
+                    - out_channels: 128
+                    - kernel_size: 3,3
+                    - stride: 1,1
+                    - padding: 1,1
+                    - dilation: 1,1
+                    - transposed: false
+                    - output_padding: 0,0
+                    - groups: 1
+                    - padding_mode: zeros
+                    - _reversed_padding_repeated_twice: 1,1,1,1
+                  - model.22.m.0.m.0.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                    - weight:
+                      - [`float16(128)`]
+                    - bias:
+                      - [`float16(128)`]
+                    - running_mean:
+                      - [`float16(128)`]
+                    - running_var:
+                      - [`float16(128)`]
+                    - num_batches_tracked:
+                      - [`int64`]
+                    - training: false
+                    - num_features: 128
+                    - eps: 0.001
+                    - momentum: 0.03
+                    - affine: true
+                    - track_running_stats: true
+                  - model.22.m.0.m.0.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                    - training: false
+                    - inplace: true
+                - add: true
+              - model.22.m.0.m.1[`ultralytics.nn.modules.block.Bottleneck`]:
+                - training: false
+                - model.22.m.0.m.1.cv1[`ultralytics.nn.modules.conv.Conv`]:
+                  - training: false
+                  - model.22.m.0.m.1.cv1.conv[`torch.nn.modules.conv.Conv2d`]:
+                    - weight:
+                      - [`float16(128,128,3,3)`]
+                    - training: false
+                    - in_channels: 128
+                    - out_channels: 128
+                    - kernel_size: 3,3
+                    - stride: 1,1
+                    - padding: 1,1
+                    - dilation: 1,1
+                    - transposed: false
+                    - output_padding: 0,0
+                    - groups: 1
+                    - padding_mode: zeros
+                    - _reversed_padding_repeated_twice: 1,1,1,1
+                  - model.22.m.0.m.1.cv1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                    - weight:
+                      - [`float16(128)`]
+                    - bias:
+                      - [`float16(128)`]
+                    - running_mean:
+                      - [`float16(128)`]
+                    - running_var:
+                      - [`float16(128)`]
+                    - num_batches_tracked:
+                      - [`int64`]
+                    - training: false
+                    - num_features: 128
+                    - eps: 0.001
+                    - momentum: 0.03
+                    - affine: true
+                    - track_running_stats: true
+                  - model.22.m.0.m.1.cv1.act[`torch.nn.modules.activation.SiLU`]:
+                    - training: false
+                    - inplace: true
+                - model.22.m.0.m.1.cv2[`ultralytics.nn.modules.conv.Conv`]:
+                  - training: false
+                  - model.22.m.0.m.1.cv2.conv[`torch.nn.modules.conv.Conv2d`]:
+                    - weight:
+                      - [`float16(128,128,3,3)`]
+                    - training: false
+                    - in_channels: 128
+                    - out_channels: 128
+                    - kernel_size: 3,3
+                    - stride: 1,1
+                    - padding: 1,1
+                    - dilation: 1,1
+                    - transposed: false
+                    - output_padding: 0,0
+                    - groups: 1
+                    - padding_mode: zeros
+                    - _reversed_padding_repeated_twice: 1,1,1,1
+                  - model.22.m.0.m.1.cv2.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                    - weight:
+                      - [`float16(128)`]
+                    - bias:
+                      - [`float16(128)`]
+                    - running_mean:
+                      - [`float16(128)`]
+                    - running_var:
+                      - [`float16(128)`]
+                    - num_batches_tracked:
+                      - [`int64`]
+                    - training: false
+                    - num_features: 128
+                    - eps: 0.001
+                    - momentum: 0.03
+                    - affine: true
+                    - track_running_stats: true
+                  - model.22.m.0.m.1.cv2.act[`torch.nn.modules.activation.SiLU`]:
+                    - training: false
+                    - inplace: true
+                - add: true
+              - training: false
+          - training: false
+        - c: 256
+        - i: 22
+        - f: -1
+        - type: ultralytics.nn.modules.block.C3k2
+      - model.23[`ultralytics.nn.modules.head.Detect`]:
+        - training: false
+        - model.23.cv2[`torch.nn.modules.container.ModuleList`]:
+          - model.23.cv2.0[`torch.nn.modules.container.Sequential`]:
+            - model.23.cv2.0.0[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.23.cv2.0.0.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(64,128,3,3)`]
+                - training: false
+                - in_channels: 128
+                - out_channels: 64
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.23.cv2.0.0.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(64)`]
+                - bias:
+                  - [`float16(64)`]
+                - running_mean:
+                  - [`float16(64)`]
+                - running_var:
+                  - [`float16(64)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 64
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.23.cv2.0.0.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.23.cv2.0.1[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.23.cv2.0.1.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(64,64,3,3)`]
+                - training: false
+                - in_channels: 64
+                - out_channels: 64
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.23.cv2.0.1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(64)`]
+                - bias:
+                  - [`float16(64)`]
+                - running_mean:
+                  - [`float16(64)`]
+                - running_var:
+                  - [`float16(64)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 64
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.23.cv2.0.1.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.23.cv2.0.2[`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float16(64,64,1,1)`]
+              - bias:
+                - [`float16(64)`]
+              - training: false
+              - in_channels: 64
+              - out_channels: 64
+              - kernel_size: 1,1
+              - stride: 1,1
+              - padding: 0,0
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 0,0,0,0
+            - training: false
+          - model.23.cv2.1[`torch.nn.modules.container.Sequential`]:
+            - model.23.cv2.1.0[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.23.cv2.1.0.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(64,256,3,3)`]
+                - training: false
+                - in_channels: 256
+                - out_channels: 64
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.23.cv2.1.0.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(64)`]
+                - bias:
+                  - [`float16(64)`]
+                - running_mean:
+                  - [`float16(64)`]
+                - running_var:
+                  - [`float16(64)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 64
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.23.cv2.1.0.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.23.cv2.1.1[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.23.cv2.1.1.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(64,64,3,3)`]
+                - training: false
+                - in_channels: 64
+                - out_channels: 64
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.23.cv2.1.1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(64)`]
+                - bias:
+                  - [`float16(64)`]
+                - running_mean:
+                  - [`float16(64)`]
+                - running_var:
+                  - [`float16(64)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 64
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.23.cv2.1.1.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.23.cv2.1.2[`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float16(64,64,1,1)`]
+              - bias:
+                - [`float16(64)`]
+              - training: false
+              - in_channels: 64
+              - out_channels: 64
+              - kernel_size: 1,1
+              - stride: 1,1
+              - padding: 0,0
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 0,0,0,0
+            - training: false
+          - model.23.cv2.2[`torch.nn.modules.container.Sequential`]:
+            - model.23.cv2.2.0[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.23.cv2.2.0.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(64,512,3,3)`]
+                - training: false
+                - in_channels: 512
+                - out_channels: 64
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.23.cv2.2.0.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(64)`]
+                - bias:
+                  - [`float16(64)`]
+                - running_mean:
+                  - [`float16(64)`]
+                - running_var:
+                  - [`float16(64)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 64
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.23.cv2.2.0.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.23.cv2.2.1[`ultralytics.nn.modules.conv.Conv`]:
+              - training: false
+              - model.23.cv2.2.1.conv[`torch.nn.modules.conv.Conv2d`]:
+                - weight:
+                  - [`float16(64,64,3,3)`]
+                - training: false
+                - in_channels: 64
+                - out_channels: 64
+                - kernel_size: 3,3
+                - stride: 1,1
+                - padding: 1,1
+                - dilation: 1,1
+                - transposed: false
+                - output_padding: 0,0
+                - groups: 1
+                - padding_mode: zeros
+                - _reversed_padding_repeated_twice: 1,1,1,1
+              - model.23.cv2.2.1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                - weight:
+                  - [`float16(64)`]
+                - bias:
+                  - [`float16(64)`]
+                - running_mean:
+                  - [`float16(64)`]
+                - running_var:
+                  - [`float16(64)`]
+                - num_batches_tracked:
+                  - [`int64`]
+                - training: false
+                - num_features: 64
+                - eps: 0.001
+                - momentum: 0.03
+                - affine: true
+                - track_running_stats: true
+              - model.23.cv2.2.1.act[`torch.nn.modules.activation.SiLU`]:
+                - training: false
+                - inplace: true
+            - model.23.cv2.2.2[`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float16(64,64,1,1)`]
+              - bias:
+                - [`float16(64)`]
+              - training: false
+              - in_channels: 64
+              - out_channels: 64
+              - kernel_size: 1,1
+              - stride: 1,1
+              - padding: 0,0
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 0,0,0,0
+            - training: false
+          - training: false
+        - model.23.cv3[`torch.nn.modules.container.ModuleList`]:
+          - model.23.cv3.0[`torch.nn.modules.container.Sequential`]:
+            - model.23.cv3.0.0[`torch.nn.modules.container.Sequential`]:
+              - model.23.cv3.0.0.0[`ultralytics.nn.modules.conv.DWConv`]:
+                - training: false
+                - model.23.cv3.0.0.0.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(128,1,3,3)`]
+                  - training: false
+                  - in_channels: 128
+                  - out_channels: 128
+                  - kernel_size: 3,3
+                  - stride: 1,1
+                  - padding: 1,1
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 128
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 1,1,1,1
+                - model.23.cv3.0.0.0.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(128)`]
+                  - bias:
+                    - [`float16(128)`]
+                  - running_mean:
+                    - [`float16(128)`]
+                  - running_var:
+                    - [`float16(128)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 128
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.23.cv3.0.0.0.act[`torch.nn.modules.activation.SiLU`]:
+                  - training: false
+                  - inplace: true
+              - model.23.cv3.0.0.1[`ultralytics.nn.modules.conv.Conv`]:
+                - training: false
+                - model.23.cv3.0.0.1.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(128,128,1,1)`]
+                  - training: false
+                  - in_channels: 128
+                  - out_channels: 128
+                  - kernel_size: 1,1
+                  - stride: 1,1
+                  - padding: 0,0
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 1
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 0,0,0,0
+                - model.23.cv3.0.0.1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(128)`]
+                  - bias:
+                    - [`float16(128)`]
+                  - running_mean:
+                    - [`float16(128)`]
+                  - running_var:
+                    - [`float16(128)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 128
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.23.cv3.0.0.1.act[`torch.nn.modules.activation.SiLU`]:
+                  - training: false
+                  - inplace: true
+              - training: false
+            - model.23.cv3.0.1[`torch.nn.modules.container.Sequential`]:
+              - model.23.cv3.0.1.0[`ultralytics.nn.modules.conv.DWConv`]:
+                - training: false
+                - model.23.cv3.0.1.0.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(128,1,3,3)`]
+                  - training: false
+                  - in_channels: 128
+                  - out_channels: 128
+                  - kernel_size: 3,3
+                  - stride: 1,1
+                  - padding: 1,1
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 128
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 1,1,1,1
+                - model.23.cv3.0.1.0.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(128)`]
+                  - bias:
+                    - [`float16(128)`]
+                  - running_mean:
+                    - [`float16(128)`]
+                  - running_var:
+                    - [`float16(128)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 128
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.23.cv3.0.1.0.act[`torch.nn.modules.activation.SiLU`]:
+                  - training: false
+                  - inplace: true
+              - model.23.cv3.0.1.1[`ultralytics.nn.modules.conv.Conv`]:
+                - training: false
+                - model.23.cv3.0.1.1.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(128,128,1,1)`]
+                  - training: false
+                  - in_channels: 128
+                  - out_channels: 128
+                  - kernel_size: 1,1
+                  - stride: 1,1
+                  - padding: 0,0
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 1
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 0,0,0,0
+                - model.23.cv3.0.1.1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(128)`]
+                  - bias:
+                    - [`float16(128)`]
+                  - running_mean:
+                    - [`float16(128)`]
+                  - running_var:
+                    - [`float16(128)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 128
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.23.cv3.0.1.1.act[`torch.nn.modules.activation.SiLU`]:
+                  - training: false
+                  - inplace: true
+              - training: false
+            - model.23.cv3.0.2[`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float16(80,128,1,1)`]
+              - bias:
+                - [`float16(80)`]
+              - training: false
+              - in_channels: 128
+              - out_channels: 80
+              - kernel_size: 1,1
+              - stride: 1,1
+              - padding: 0,0
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 0,0,0,0
+            - training: false
+          - model.23.cv3.1[`torch.nn.modules.container.Sequential`]:
+            - model.23.cv3.1.0[`torch.nn.modules.container.Sequential`]:
+              - model.23.cv3.1.0.0[`ultralytics.nn.modules.conv.DWConv`]:
+                - training: false
+                - model.23.cv3.1.0.0.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(256,1,3,3)`]
+                  - training: false
+                  - in_channels: 256
+                  - out_channels: 256
+                  - kernel_size: 3,3
+                  - stride: 1,1
+                  - padding: 1,1
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 256
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 1,1,1,1
+                - model.23.cv3.1.0.0.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(256)`]
+                  - bias:
+                    - [`float16(256)`]
+                  - running_mean:
+                    - [`float16(256)`]
+                  - running_var:
+                    - [`float16(256)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 256
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.23.cv3.1.0.0.act[`torch.nn.modules.activation.SiLU`]:
+                  - training: false
+                  - inplace: true
+              - model.23.cv3.1.0.1[`ultralytics.nn.modules.conv.Conv`]:
+                - training: false
+                - model.23.cv3.1.0.1.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(128,256,1,1)`]
+                  - training: false
+                  - in_channels: 256
+                  - out_channels: 128
+                  - kernel_size: 1,1
+                  - stride: 1,1
+                  - padding: 0,0
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 1
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 0,0,0,0
+                - model.23.cv3.1.0.1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(128)`]
+                  - bias:
+                    - [`float16(128)`]
+                  - running_mean:
+                    - [`float16(128)`]
+                  - running_var:
+                    - [`float16(128)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 128
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.23.cv3.1.0.1.act[`torch.nn.modules.activation.SiLU`]:
+                  - training: false
+                  - inplace: true
+              - training: false
+            - model.23.cv3.1.1[`torch.nn.modules.container.Sequential`]:
+              - model.23.cv3.1.1.0[`ultralytics.nn.modules.conv.DWConv`]:
+                - training: false
+                - model.23.cv3.1.1.0.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(128,1,3,3)`]
+                  - training: false
+                  - in_channels: 128
+                  - out_channels: 128
+                  - kernel_size: 3,3
+                  - stride: 1,1
+                  - padding: 1,1
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 128
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 1,1,1,1
+                - model.23.cv3.1.1.0.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(128)`]
+                  - bias:
+                    - [`float16(128)`]
+                  - running_mean:
+                    - [`float16(128)`]
+                  - running_var:
+                    - [`float16(128)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 128
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.23.cv3.1.1.0.act[`torch.nn.modules.activation.SiLU`]:
+                  - training: false
+                  - inplace: true
+              - model.23.cv3.1.1.1[`ultralytics.nn.modules.conv.Conv`]:
+                - training: false
+                - model.23.cv3.1.1.1.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(128,128,1,1)`]
+                  - training: false
+                  - in_channels: 128
+                  - out_channels: 128
+                  - kernel_size: 1,1
+                  - stride: 1,1
+                  - padding: 0,0
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 1
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 0,0,0,0
+                - model.23.cv3.1.1.1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(128)`]
+                  - bias:
+                    - [`float16(128)`]
+                  - running_mean:
+                    - [`float16(128)`]
+                  - running_var:
+                    - [`float16(128)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 128
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.23.cv3.1.1.1.act[`torch.nn.modules.activation.SiLU`]:
+                  - training: false
+                  - inplace: true
+              - training: false
+            - model.23.cv3.1.2[`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float16(80,128,1,1)`]
+              - bias:
+                - [`float16(80)`]
+              - training: false
+              - in_channels: 128
+              - out_channels: 80
+              - kernel_size: 1,1
+              - stride: 1,1
+              - padding: 0,0
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 0,0,0,0
+            - training: false
+          - model.23.cv3.2[`torch.nn.modules.container.Sequential`]:
+            - model.23.cv3.2.0[`torch.nn.modules.container.Sequential`]:
+              - model.23.cv3.2.0.0[`ultralytics.nn.modules.conv.DWConv`]:
+                - training: false
+                - model.23.cv3.2.0.0.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(512,1,3,3)`]
+                  - training: false
+                  - in_channels: 512
+                  - out_channels: 512
+                  - kernel_size: 3,3
+                  - stride: 1,1
+                  - padding: 1,1
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 512
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 1,1,1,1
+                - model.23.cv3.2.0.0.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(512)`]
+                  - bias:
+                    - [`float16(512)`]
+                  - running_mean:
+                    - [`float16(512)`]
+                  - running_var:
+                    - [`float16(512)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 512
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.23.cv3.2.0.0.act[`torch.nn.modules.activation.SiLU`]:
+                  - training: false
+                  - inplace: true
+              - model.23.cv3.2.0.1[`ultralytics.nn.modules.conv.Conv`]:
+                - training: false
+                - model.23.cv3.2.0.1.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(128,512,1,1)`]
+                  - training: false
+                  - in_channels: 512
+                  - out_channels: 128
+                  - kernel_size: 1,1
+                  - stride: 1,1
+                  - padding: 0,0
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 1
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 0,0,0,0
+                - model.23.cv3.2.0.1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(128)`]
+                  - bias:
+                    - [`float16(128)`]
+                  - running_mean:
+                    - [`float16(128)`]
+                  - running_var:
+                    - [`float16(128)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 128
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.23.cv3.2.0.1.act[`torch.nn.modules.activation.SiLU`]:
+                  - training: false
+                  - inplace: true
+              - training: false
+            - model.23.cv3.2.1[`torch.nn.modules.container.Sequential`]:
+              - model.23.cv3.2.1.0[`ultralytics.nn.modules.conv.DWConv`]:
+                - training: false
+                - model.23.cv3.2.1.0.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(128,1,3,3)`]
+                  - training: false
+                  - in_channels: 128
+                  - out_channels: 128
+                  - kernel_size: 3,3
+                  - stride: 1,1
+                  - padding: 1,1
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 128
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 1,1,1,1
+                - model.23.cv3.2.1.0.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(128)`]
+                  - bias:
+                    - [`float16(128)`]
+                  - running_mean:
+                    - [`float16(128)`]
+                  - running_var:
+                    - [`float16(128)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 128
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.23.cv3.2.1.0.act[`torch.nn.modules.activation.SiLU`]:
+                  - training: false
+                  - inplace: true
+              - model.23.cv3.2.1.1[`ultralytics.nn.modules.conv.Conv`]:
+                - training: false
+                - model.23.cv3.2.1.1.conv[`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float16(128,128,1,1)`]
+                  - training: false
+                  - in_channels: 128
+                  - out_channels: 128
+                  - kernel_size: 1,1
+                  - stride: 1,1
+                  - padding: 0,0
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 1
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 0,0,0,0
+                - model.23.cv3.2.1.1.bn[`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float16(128)`]
+                  - bias:
+                    - [`float16(128)`]
+                  - running_mean:
+                    - [`float16(128)`]
+                  - running_var:
+                    - [`float16(128)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 128
+                  - eps: 0.001
+                  - momentum: 0.03
+                  - affine: true
+                  - track_running_stats: true
+                - model.23.cv3.2.1.1.act[`torch.nn.modules.activation.SiLU`]:
+                  - training: false
+                  - inplace: true
+              - training: false
+            - model.23.cv3.2.2[`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float16(80,128,1,1)`]
+              - bias:
+                - [`float16(80)`]
+              - training: false
+              - in_channels: 128
+              - out_channels: 80
+              - kernel_size: 1,1
+              - stride: 1,1
+              - padding: 0,0
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 0,0,0,0
+            - training: false
+          - training: false
+        - model.23.dfl[`ultralytics.nn.modules.block.DFL`]:
+          - training: false
+          - model.23.dfl.conv[`torch.nn.modules.conv.Conv2d`]:
+            - weight:
+              - [`float16(1,16,1,1)`]
+            - training: false
+            - in_channels: 16
+            - out_channels: 1
+            - kernel_size: 1,1
+            - stride: 1,1
+            - padding: 0,0
+            - dilation: 1,1
+            - transposed: false
+            - output_padding: 0,0
+            - groups: 1
+            - padding_mode: zeros
+            - _reversed_padding_repeated_twice: 0,0,0,0
+          - c1: 16
+        - nc: 80
+        - nl: 3
+        - reg_max: 16
+        - no: 144
+        - stride:
+          - [`float16(3)`]
+        - i: 23
+        - f: 16,19,22
+        - type: ultralytics.nn.modules.head.Detect
+        - inplace: true
+        - anchors:
+          - [`float16(2,6174)`]
+        - strides:
+          - [`float16(1,6174)`]
+        - shape: 136,144,84,56
+      - training: false
+    - [`builtins.dict`]:
+      - nc: 80
+      - [`builtins.dict`]:
+        - n: 0.5,0.25,1024
+        - s: 0.5,0.5,1024
+        - m: 0.5,1,512
+        - l: 1,1,512
+        - x: 1,1.5,512
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 1
+        - 2: Conv
+        - 3: 64,3,2
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 1
+        - 2: Conv
+        - 3: 128,3,2
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 2
+        - 2: C3k2
+        - [`builtins.list`]:
+          - 0: 256
+          - 1: false
+          - 2: 0.25
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 1
+        - 2: Conv
+        - 3: 256,3,2
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 2
+        - 2: C3k2
+        - [`builtins.list`]:
+          - 0: 512
+          - 1: false
+          - 2: 0.25
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 1
+        - 2: Conv
+        - 3: 512,3,2
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 2
+        - 2: C3k2
+        - [`builtins.list`]:
+          - 0: 512
+          - 1: true
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 1
+        - 2: Conv
+        - 3: 1024,3,2
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 2
+        - 2: C3k2
+        - [`builtins.list`]:
+          - 0: 1024
+          - 1: true
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 1
+        - 2: SPPF
+        - 3: 1024,5
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 2
+        - 2: C2PSA
+        - 3: 1024
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 1
+        - 2: nn.Upsample
+        - [`builtins.list`]:
+          - 0: None
+          - 1: 2
+          - 2: nearest
+      - [`builtins.list`]:
+        - 0: -1,6
+        - 1: 1
+        - 2: Concat
+        - 3: 1
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 2
+        - 2: C3k2
+        - [`builtins.list`]:
+          - 0: 512
+          - 1: false
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 1
+        - 2: nn.Upsample
+        - [`builtins.list`]:
+          - 0: None
+          - 1: 2
+          - 2: nearest
+      - [`builtins.list`]:
+        - 0: -1,4
+        - 1: 1
+        - 2: Concat
+        - 3: 1
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 2
+        - 2: C3k2
+        - [`builtins.list`]:
+          - 0: 256
+          - 1: false
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 1
+        - 2: Conv
+        - 3: 256,3,2
+      - [`builtins.list`]:
+        - 0: -1,13
+        - 1: 1
+        - 2: Concat
+        - 3: 1
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 2
+        - 2: C3k2
+        - [`builtins.list`]:
+          - 0: 512
+          - 1: false
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 1
+        - 2: Conv
+        - 3: 512,3,2
+      - [`builtins.list`]:
+        - 0: -1,10
+        - 1: 1
+        - 2: Concat
+        - 3: 1
+      - [`builtins.list`]:
+        - 0: -1
+        - 1: 2
+        - 2: C3k2
+        - [`builtins.list`]:
+          - 0: 1024
+          - 1: true
+      - [`builtins.list`]:
+        - 0: 16,19,22
+        - 1: 1
+        - 2: Detect
+        - 3[`undefined`]: nc
+      - scale: s
+      - yaml_file: yolo11s.yaml
+      - ch: 3
+    - save: 4,6,10,13,16,19,22
+    - [`builtins.dict`]:
+      - 0: person
+      - 1: bicycle
+      - 2: car
+      - 3: motorcycle
+      - 4: airplane
+      - 5: bus
+      - 6: train
+      - 7: truck
+      - 8: boat
+      - 9: traffic light
+      - 10: fire hydrant
+      - 11: stop sign
+      - 12: parking meter
+      - 13: bench
+      - 14: bird
+      - 15: cat
+      - 16: dog
+      - 17: horse
+      - 18: sheep
+      - 19: cow
+      - 20: elephant
+      - 21: bear
+      - 22: zebra
+      - 23: giraffe
+      - 24: backpack
+      - 25: umbrella
+      - 26: handbag
+      - 27: tie
+      - 28: suitcase
+      - 29: frisbee
+      - 30: skis
+      - 31: snowboard
+      - 32: sports ball
+      - 33: kite
+      - 34: baseball bat
+      - 35: baseball glove
+      - 36: skateboard
+      - 37: surfboard
+      - 38: tennis racket
+      - 39: bottle
+      - 40: wine glass
+      - 41: cup
+      - 42: fork
+      - 43: knife
+      - 44: spoon
+      - 45: bowl
+      - 46: banana
+      - 47: apple
+      - 48: sandwich
+      - 49: orange
+      - 50: broccoli
+      - 51: carrot
+      - 52: hot dog
+      - 53: pizza
+      - 54: donut
+      - 55: cake
+      - 56: chair
+      - 57: couch
+      - 58: potted plant
+      - 59: bed
+      - 60: dining table
+      - 61: toilet
+      - 62: tv
+      - 63: laptop
+      - 64: mouse
+      - 65: remote
+      - 66: keyboard
+      - 67: cell phone
+      - 68: microwave
+      - 69: oven
+      - 70: toaster
+      - 71: sink
+      - 72: refrigerator
+      - 73: book
+      - 74: clock
+      - 75: vase
+      - 76: scissors
+      - 77: teddy bear
+      - 78: hair drier
+      - 79: toothbrush
+    - inplace: true
+    - stride:
+      - [`float32(3)`]
+    - nc: 80
+    - [`builtins.dict`]:
+      - task: detect
+      - data: /usr/src/ultralytics/ultralytics/cfg/datasets/coco.yaml
+      - imgsz: 640
+      - single_cls: false
+      - model: /home/laughing/codes/ultralytics/weights/11-/yolo11s.pt
+    - pt_path: /home/laughing/codes/ultralytics/weights/11-/yolo11s.pt
+    - task: detect
+  - [`builtins.dict`]:
+    - task: detect
+    - mode: train
+    - model: yolo11s.yaml
+    - data: /usr/src/ultralytics/ultralytics/cfg/datasets/coco.yaml
+    - epochs: 600
+    - patience: 100
+    - batch: 128
+    - imgsz: 640
+    - save: true
+    - save_period: -1
+    - cache: disk
+    - device: 0
+    - workers: 8
+    - project: exp10-new
+    - name: yolov8s-c3k2-6-m005-6
+    - exist_ok: false
+    - pretrained: true
+    - optimizer: auto
+    - verbose: true
+    - seed: 0
+    - deterministic: true
+    - single_cls: false
+    - rect: false
+    - cos_lr: false
+    - close_mosaic: 10
+    - resume: false
+    - amp: true
+    - fraction: 1
+    - profile: false
+    - multi_scale: false
+    - overlap_mask: true
+    - mask_ratio: 4
+    - dropout: 0
+    - val: true
+    - split: val
+    - save_json: false
+    - save_hybrid: false
+    - iou: 0.7
+    - max_det: 300
+    - half: false
+    - dnn: false
+    - plots: true
+    - vid_stride: 1
+    - stream_buffer: false
+    - visualize: false
+    - augment: false
+    - agnostic_nms: false
+    - retina_masks: false
+    - show: false
+    - save_frames: false
+    - save_txt: false
+    - save_conf: false
+    - save_crop: false
+    - show_labels: true
+    - show_conf: true
+    - show_boxes: true
+    - format: torchscript
+    - keras: false
+    - optimize: false
+    - int8: false
+    - dynamic: false
+    - simplify: false
+    - workspace: 4
+    - nms: false
+    - lr0: 0.01
+    - lrf: 0.01
+    - momentum: 0.937
+    - weight_decay: 0.0005
+    - warmup_epochs: 3
+    - warmup_momentum: 0.8
+    - warmup_bias_lr: 0
+    - box: 7.5
+    - cls: 0.5
+    - dfl: 1.5
+    - pose: 12
+    - kobj: 1
+    - label_smoothing: 0
+    - nbs: 64
+    - hsv_h: 0.015
+    - hsv_s: 0.7
+    - hsv_v: 0.4
+    - degrees: 0
+    - translate: 0.1
+    - scale: 0.9
+    - shear: 0
+    - perspective: 0
+    - flipud: 0
+    - fliplr: 0.5
+    - bgr: 0
+    - mosaic: 1
+    - mixup: 0.05
+    - copy_paste: 0.15
+    - copy_paste_mode: flip
+    - auto_augment: randaugment
+    - erasing: 0.4
+    - crop_fraction: 1
+    - tracker: botsort.yaml
+  - [`builtins.dict`]:
+    - metrics/precision(B): 0.7057906077807783
+    - metrics/recall(B): 0.5752807667185447
+    - metrics/mAP50(B): 0.6383414577645499
+    - metrics/mAP50-95(B): 0.4691860589732738
+    - val/box_loss: 0.99042
+    - val/cls_loss: 0.95653
+    - val/dfl_loss: 1.06657
+    - fitness: 0.48389
+    - train/cls_loss: 0.84786
+    - train/box_loss: 0.9535
+    - train/dfl_loss: 1.06188
+    - lr/pg0: 0.0001165
+    - lr/pg2: 0.0001165
+    - lr/pg1: 0.0001165
+  - [`builtins.dict`]:
+    - epoch: 600 values...
+    - metrics/recall(B): 600 values...
+    - metrics/mAP50(B): 600 values...
+    - metrics/mAP50-95(B): 600 values...
+    - metrics/precision(B): 600 values...
+    - train/cls_loss: 600 values...
+    - train/box_loss: 600 values...
+    - train/dfl_loss: 600 values...
+    - val/box_loss: 600 values...
+    - val/cls_loss: 600 values...
+    - lr/pg0: 600 values...
+    - lr/pg2: 600 values...
+    - lr/pg1: 600 values...
+    - val/dfl_loss: 600 values...

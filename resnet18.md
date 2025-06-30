@@ -1,0 +1,752 @@
+- format: PyTorch v1.6 
+- identifer: resnet18_pretrained.pth 
+# Graph 1 
+## node 1 
+- [`torchvision.models.resnet.ResNet`]:
+  - training: false
+  - [`builtins.dict`]:
+    - [`torch.nn.modules.conv.Conv2d`]:
+      - weight:
+        - [`float32(64,3,7,7)`]
+      - training: false
+      - in_channels: 3
+      - out_channels: 64
+      - kernel_size: 7,7
+      - stride: 2,2
+      - padding: 3,3
+      - dilation: 1,1
+      - transposed: false
+      - output_padding: 0,0
+      - groups: 1
+      - padding_mode: zeros
+      - _reversed_padding_repeated_twice: 3,3,3,3
+    - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+      - weight:
+        - [`float32(64)`]
+      - bias:
+        - [`float32(64)`]
+      - running_mean:
+        - [`float32(64)`]
+      - running_var:
+        - [`float32(64)`]
+      - num_batches_tracked:
+        - [`int64`]
+      - training: false
+      - num_features: 64
+      - eps: 0.00001
+      - momentum: 0.1
+      - affine: true
+      - track_running_stats: true
+    - [`torch.nn.modules.activation.ReLU`]:
+      - training: false
+      - inplace: true
+    - [`torch.nn.modules.pooling.MaxPool2d`]:
+      - training: false
+      - kernel_size: 3
+      - stride: 2
+      - padding: 1
+      - dilation: 1
+      - return_indices: false
+      - ceil_mode: false
+    - [`torch.nn.modules.container.Sequential`]:
+      - [`builtins.dict`]:
+        - [`torchvision.models.resnet.BasicBlock`]:
+          - training: false
+          - [`builtins.dict`]:
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(64,64,3,3)`]
+              - training: false
+              - in_channels: 64
+              - out_channels: 64
+              - kernel_size: 3,3
+              - stride: 1,1
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(64)`]
+              - bias:
+                - [`float32(64)`]
+              - running_mean:
+                - [`float32(64)`]
+              - running_var:
+                - [`float32(64)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 64
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+            - [`torch.nn.modules.activation.ReLU`]:
+              - training: false
+              - inplace: true
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(64,64,3,3)`]
+              - training: false
+              - in_channels: 64
+              - out_channels: 64
+              - kernel_size: 3,3
+              - stride: 1,1
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(64)`]
+              - bias:
+                - [`float32(64)`]
+              - running_mean:
+                - [`float32(64)`]
+              - running_var:
+                - [`float32(64)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 64
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+          - stride: 1
+        - [`torchvision.models.resnet.BasicBlock`]:
+          - training: false
+          - [`builtins.dict`]:
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(64,64,3,3)`]
+              - training: false
+              - in_channels: 64
+              - out_channels: 64
+              - kernel_size: 3,3
+              - stride: 1,1
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(64)`]
+              - bias:
+                - [`float32(64)`]
+              - running_mean:
+                - [`float32(64)`]
+              - running_var:
+                - [`float32(64)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 64
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+            - [`torch.nn.modules.activation.ReLU`]:
+              - training: false
+              - inplace: true
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(64,64,3,3)`]
+              - training: false
+              - in_channels: 64
+              - out_channels: 64
+              - kernel_size: 3,3
+              - stride: 1,1
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(64)`]
+              - bias:
+                - [`float32(64)`]
+              - running_mean:
+                - [`float32(64)`]
+              - running_var:
+                - [`float32(64)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 64
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+          - stride: 1
+      - training: false
+    - [`torch.nn.modules.container.Sequential`]:
+      - [`builtins.dict`]:
+        - [`torchvision.models.resnet.BasicBlock`]:
+          - training: false
+          - [`builtins.dict`]:
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(128,64,3,3)`]
+              - training: false
+              - in_channels: 64
+              - out_channels: 128
+              - kernel_size: 3,3
+              - stride: 2,2
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(128)`]
+              - bias:
+                - [`float32(128)`]
+              - running_mean:
+                - [`float32(128)`]
+              - running_var:
+                - [`float32(128)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 128
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+            - [`torch.nn.modules.activation.ReLU`]:
+              - training: false
+              - inplace: true
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(128,128,3,3)`]
+              - training: false
+              - in_channels: 128
+              - out_channels: 128
+              - kernel_size: 3,3
+              - stride: 1,1
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(128)`]
+              - bias:
+                - [`float32(128)`]
+              - running_mean:
+                - [`float32(128)`]
+              - running_var:
+                - [`float32(128)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 128
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+            - [`torch.nn.modules.container.Sequential`]:
+              - [`builtins.dict`]:
+                - [`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float32(128,64,1,1)`]
+                  - training: false
+                  - in_channels: 64
+                  - out_channels: 128
+                  - kernel_size: 1,1
+                  - stride: 2,2
+                  - padding: 0,0
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 1
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 0,0,0,0
+                - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float32(128)`]
+                  - bias:
+                    - [`float32(128)`]
+                  - running_mean:
+                    - [`float32(128)`]
+                  - running_var:
+                    - [`float32(128)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 128
+                  - eps: 0.00001
+                  - momentum: 0.1
+                  - affine: true
+                  - track_running_stats: true
+              - training: false
+          - stride: 2
+        - [`torchvision.models.resnet.BasicBlock`]:
+          - training: false
+          - [`builtins.dict`]:
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(128,128,3,3)`]
+              - training: false
+              - in_channels: 128
+              - out_channels: 128
+              - kernel_size: 3,3
+              - stride: 1,1
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(128)`]
+              - bias:
+                - [`float32(128)`]
+              - running_mean:
+                - [`float32(128)`]
+              - running_var:
+                - [`float32(128)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 128
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+            - [`torch.nn.modules.activation.ReLU`]:
+              - training: false
+              - inplace: true
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(128,128,3,3)`]
+              - training: false
+              - in_channels: 128
+              - out_channels: 128
+              - kernel_size: 3,3
+              - stride: 1,1
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(128)`]
+              - bias:
+                - [`float32(128)`]
+              - running_mean:
+                - [`float32(128)`]
+              - running_var:
+                - [`float32(128)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 128
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+          - stride: 1
+      - training: false
+    - [`torch.nn.modules.container.Sequential`]:
+      - [`builtins.dict`]:
+        - [`torchvision.models.resnet.BasicBlock`]:
+          - training: false
+          - [`builtins.dict`]:
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(256,128,3,3)`]
+              - training: false
+              - in_channels: 128
+              - out_channels: 256
+              - kernel_size: 3,3
+              - stride: 2,2
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(256)`]
+              - bias:
+                - [`float32(256)`]
+              - running_mean:
+                - [`float32(256)`]
+              - running_var:
+                - [`float32(256)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 256
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+            - [`torch.nn.modules.activation.ReLU`]:
+              - training: false
+              - inplace: true
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(256,256,3,3)`]
+              - training: false
+              - in_channels: 256
+              - out_channels: 256
+              - kernel_size: 3,3
+              - stride: 1,1
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(256)`]
+              - bias:
+                - [`float32(256)`]
+              - running_mean:
+                - [`float32(256)`]
+              - running_var:
+                - [`float32(256)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 256
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+            - [`torch.nn.modules.container.Sequential`]:
+              - [`builtins.dict`]:
+                - [`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float32(256,128,1,1)`]
+                  - training: false
+                  - in_channels: 128
+                  - out_channels: 256
+                  - kernel_size: 1,1
+                  - stride: 2,2
+                  - padding: 0,0
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 1
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 0,0,0,0
+                - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float32(256)`]
+                  - bias:
+                    - [`float32(256)`]
+                  - running_mean:
+                    - [`float32(256)`]
+                  - running_var:
+                    - [`float32(256)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 256
+                  - eps: 0.00001
+                  - momentum: 0.1
+                  - affine: true
+                  - track_running_stats: true
+              - training: false
+          - stride: 2
+        - [`torchvision.models.resnet.BasicBlock`]:
+          - training: false
+          - [`builtins.dict`]:
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(256,256,3,3)`]
+              - training: false
+              - in_channels: 256
+              - out_channels: 256
+              - kernel_size: 3,3
+              - stride: 1,1
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(256)`]
+              - bias:
+                - [`float32(256)`]
+              - running_mean:
+                - [`float32(256)`]
+              - running_var:
+                - [`float32(256)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 256
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+            - [`torch.nn.modules.activation.ReLU`]:
+              - training: false
+              - inplace: true
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(256,256,3,3)`]
+              - training: false
+              - in_channels: 256
+              - out_channels: 256
+              - kernel_size: 3,3
+              - stride: 1,1
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(256)`]
+              - bias:
+                - [`float32(256)`]
+              - running_mean:
+                - [`float32(256)`]
+              - running_var:
+                - [`float32(256)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 256
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+          - stride: 1
+      - training: false
+    - [`torch.nn.modules.container.Sequential`]:
+      - [`builtins.dict`]:
+        - [`torchvision.models.resnet.BasicBlock`]:
+          - training: false
+          - [`builtins.dict`]:
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(512,256,3,3)`]
+              - training: false
+              - in_channels: 256
+              - out_channels: 512
+              - kernel_size: 3,3
+              - stride: 2,2
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(512)`]
+              - bias:
+                - [`float32(512)`]
+              - running_mean:
+                - [`float32(512)`]
+              - running_var:
+                - [`float32(512)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 512
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+            - [`torch.nn.modules.activation.ReLU`]:
+              - training: false
+              - inplace: true
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(512,512,3,3)`]
+              - training: false
+              - in_channels: 512
+              - out_channels: 512
+              - kernel_size: 3,3
+              - stride: 1,1
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(512)`]
+              - bias:
+                - [`float32(512)`]
+              - running_mean:
+                - [`float32(512)`]
+              - running_var:
+                - [`float32(512)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 512
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+            - [`torch.nn.modules.container.Sequential`]:
+              - [`builtins.dict`]:
+                - [`torch.nn.modules.conv.Conv2d`]:
+                  - weight:
+                    - [`float32(512,256,1,1)`]
+                  - training: false
+                  - in_channels: 256
+                  - out_channels: 512
+                  - kernel_size: 1,1
+                  - stride: 2,2
+                  - padding: 0,0
+                  - dilation: 1,1
+                  - transposed: false
+                  - output_padding: 0,0
+                  - groups: 1
+                  - padding_mode: zeros
+                  - _reversed_padding_repeated_twice: 0,0,0,0
+                - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+                  - weight:
+                    - [`float32(512)`]
+                  - bias:
+                    - [`float32(512)`]
+                  - running_mean:
+                    - [`float32(512)`]
+                  - running_var:
+                    - [`float32(512)`]
+                  - num_batches_tracked:
+                    - [`int64`]
+                  - training: false
+                  - num_features: 512
+                  - eps: 0.00001
+                  - momentum: 0.1
+                  - affine: true
+                  - track_running_stats: true
+              - training: false
+          - stride: 2
+        - [`torchvision.models.resnet.BasicBlock`]:
+          - training: false
+          - [`builtins.dict`]:
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(512,512,3,3)`]
+              - training: false
+              - in_channels: 512
+              - out_channels: 512
+              - kernel_size: 3,3
+              - stride: 1,1
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(512)`]
+              - bias:
+                - [`float32(512)`]
+              - running_mean:
+                - [`float32(512)`]
+              - running_var:
+                - [`float32(512)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 512
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+            - [`torch.nn.modules.activation.ReLU`]:
+              - training: false
+              - inplace: true
+            - [`torch.nn.modules.conv.Conv2d`]:
+              - weight:
+                - [`float32(512,512,3,3)`]
+              - training: false
+              - in_channels: 512
+              - out_channels: 512
+              - kernel_size: 3,3
+              - stride: 1,1
+              - padding: 1,1
+              - dilation: 1,1
+              - transposed: false
+              - output_padding: 0,0
+              - groups: 1
+              - padding_mode: zeros
+              - _reversed_padding_repeated_twice: 1,1,1,1
+            - [`torch.nn.modules.batchnorm.BatchNorm2d`]:
+              - weight:
+                - [`float32(512)`]
+              - bias:
+                - [`float32(512)`]
+              - running_mean:
+                - [`float32(512)`]
+              - running_var:
+                - [`float32(512)`]
+              - num_batches_tracked:
+                - [`int64`]
+              - training: false
+              - num_features: 512
+              - eps: 0.00001
+              - momentum: 0.1
+              - affine: true
+              - track_running_stats: true
+          - stride: 1
+      - training: false
+    - [`torch.nn.modules.pooling.AdaptiveAvgPool2d`]:
+      - training: false
+      - output_size: 1,1
+    - [`torch.nn.modules.linear.Linear`]:
+      - weight:
+        - [`float32(1000,512)`]
+      - bias:
+        - [`float32(1000)`]
+      - training: false
+      - in_features: 512
+      - out_features: 1000
+  - [`builtins.type`]:
+    - __module__: torch.nn.modules.batchnorm
+  - inplanes: 512
+  - dilation: 1
+  - groups: 1
+  - base_width: 64
