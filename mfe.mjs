@@ -35,7 +35,7 @@ function typeify(type) {
         }
         return `${type.dataType}`
     }
-    return type.name;
+    return type;
 }
 function markdownify_item(item, level, pattern, result) {
     pattern.push(item.name)
@@ -52,22 +52,45 @@ function markdownify_item(item, level, pattern, result) {
     else if (item.type == "string[]" && has_content(item.value)) {
         result.push(`${"  ".repeat(level)}- ${item.name}[\`${typeify(item.type)}\`]: ${item.value}`)
     }
-    else if (item.type instanceof Object && item.type.name == "builtins.dict" && has_content(item.inputs)) {
+    else if (item.type instanceof Object && item.type.name == "builtins.dict") {
         result.push(`${"  ".repeat(level)}- ${item.name}[\`${typeify(item.type)}\`]:`)
-        for (const input of item.inputs) {
-            markdownify_item(input, level + 1, pattern, result)
+        if (has_content(item.inputs)) {
+            result.push(`${"  ".repeat(level + 1)}- inputs:`)
+            for (const input of item.inputs) {
+                markdownify_item(input, level + 2, pattern, result)
+            }
         }
+        if (has_content(item.outputs)) {
+            result.push(`${"  ".repeat(level + 1)}- outputs:`)
+            for (const output of item.outputs) {
+                markdownify_item(output, level + 2, pattern, result)
+            }
+        }
+    }
+    else if (typeof item.type === "string" && has_content(item.value)) {
+        result.push(`${"  ".repeat(level)}- ${item.name}[\`${typeify(item.type)}\`]: ${item.value}`)
     }
     else if (item.type == null && has_content(item.value)) {
         result.push(`${"  ".repeat(level)}- ${item.name}:`)
         for (const value of item.value) {
             markdownify_item(value, level + 1, pattern, result)
         }
+    } else if (item.type == null) {
+        result.push(`${"  ".repeat(level)}- ${item.name}`)
     }
-    else if (item.type instanceof Object && has_content(item.inputs)) {
+    else if (item.type instanceof Object) {
         result.push(`${"  ".repeat(level)}- ${item.name}[\`${typeify(item.type)}\`]:`)
-        for (const input of item.inputs) {
-            markdownify_item(input, level + 1, pattern, result)
+        if (has_content(item.inputs)) {
+            result.push(`${"  ".repeat(level + 1)}- inputs:`)
+            for (const input of item.inputs) {
+                markdownify_item(input, level + 2, pattern, result)
+            }
+        }
+        if (has_content(item.outputs)) {
+            result.push(`${"  ".repeat(level + 1)}- outputs:`)
+            for (const output of item.outputs) {
+                markdownify_item(output, level + 2, pattern, result)
+            }
         }
     }
     else if (item.type instanceof Object && item.type.dataType) {
@@ -139,8 +162,11 @@ async function main() {
 
     await h.view(dummyView)
     // h._meta.file = ["../nvidia_resnet50_200821.pth"]
-    h._meta.file = ["../yolo11s.pt"]
+    // h._meta.file = ["../yolo11s.pt"]
     // h._meta.file = ["../resnet18_pretrained.pth"]
+    // h._meta.file = ["../squeezenet1.0-3.onnx"]
+    // h._meta.file = ["../traced_online_pred_layer.pt"]
+    h._meta.file = ["../fcn_resnet50.pt"]
     await h.start()
     let model = dummyView.model
     console.log("model loaded")
